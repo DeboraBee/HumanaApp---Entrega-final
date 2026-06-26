@@ -435,61 +435,35 @@
     flex-shrink: 0;
   }
 
-  /* ── SCREENSHOT PLACEHOLDER ──────────────────────────────────────────── */
-  .screenshot-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 12px;
-  }
-
-  .screenshot-row.single { grid-template-columns: 1fr; }
-  .screenshot-row.triple { grid-template-columns: 1fr 1fr 1fr; }
-
-  .screenshot-placeholder {
-    border: 1.5px dashed var(--border);
-    border-radius: var(--radius-md);
-    padding: 32px 20px;
+  /* ── VIDEO REFERENCE ─────────────────────────────────────────────────── */
+  .video-ref {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 200px;
+    gap: 14px;
+    padding: 14px 18px;
     background: var(--surface);
-    text-align: center;
-    transition: border-color 0.2s;
-    position: relative;
-    overflow: hidden;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--terra);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: 28px;
   }
 
-  .screenshot-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(232,168,56,.04) 0%, transparent 70%);
-  }
+  .video-ref-icon { font-size: 20px; flex-shrink: 0; }
 
-  .screenshot-placeholder-icon { font-size: 28px; opacity: 0.4; }
-
-  .screenshot-placeholder-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-dim);
-    letter-spacing: 0.5px;
-  }
-
-  .screenshot-placeholder-sub {
+  .video-ref-label {
+    display: block;
     font-size: 10px;
-    color: var(--border);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--terra-light);
+    text-transform: uppercase;
+    margin-bottom: 3px;
   }
 
-  .screenshot-caption {
-    font-size: 11px;
-    color: var(--text-dim);
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 24px;
+  .video-ref-screens {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
   }
 
   /* ── HEURISTIC DIVIDER ───────────────────────────────────────────────── */
@@ -716,8 +690,7 @@
     .cover { padding: 40px 20px; }
     .cover-meta { grid-template-columns: 1fr; }
     .cover-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .screenshot-row { grid-template-columns: 1fr; }
-    .screenshot-row.triple { grid-template-columns: 1fr; }
+    .video-ref { flex-direction: column; align-items: flex-start; }
     .info-grid { grid-template-columns: 1fr; }
     .cover-title { font-size: 36px; }
   }
@@ -1002,19 +975,13 @@
   </p>
 
   <!-- Placeholder de telas -->
-  <div class="screenshot-row">
-    <div class="screenshot-placeholder">
-      <div class="screenshot-placeholder-icon">📱</div>
-      <div class="screenshot-placeholder-label">Tela de Login</div>
-      <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+  <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Tela de Login · Home do Aluno</span>
+      </div>
     </div>
-    <div class="screenshot-placeholder">
-      <div class="screenshot-placeholder-icon">📱</div>
-      <div class="screenshot-placeholder-label">Home do Aluno</div>
-      <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-    </div>
-  </div>
-  <p class="screenshot-caption">Figura 1 – Telas principais do HumanaApp: Login e Home do Aluno.</p>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════════
@@ -1106,19 +1073,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Indicadores de streak (🔥 dias), XP e nível visíveis no cabeçalho do aluno a qualquer momento.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">📊</div>
-        <div class="screenshot-placeholder-label">Barra de Progresso do Quiz</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">📊</div>
-        <div class="screenshot-placeholder-label">Card "Continuar" com progresso</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Barra de Progresso do Quiz · Card "Continuar" com progresso</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 2 – Exemplos de feedback de status: quiz e card de continuação.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1154,19 +1115,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Labels <em>ATIVO</em> e <em>PROGRAMADO</em> espelham a linguagem de planejamento escolar tradicional.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🗺️</div>
-        <div class="screenshot-placeholder-label">Trilha de Aprendizagem</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🏫</div>
-        <div class="screenshot-placeholder-label">Código da Turma</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Trilha de Aprendizagem · Código da Turma</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 3 – Linguagem do mundo real: trilha escolar e código de turma.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1201,14 +1156,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Bottom navigation bar permite navegar diretamente para qualquer seção a partir de qualquer ponto do aplicativo.</span></div>
     </div>
 
-    <div class="screenshot-row single">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">⬅️</div>
-        <div class="screenshot-placeholder-label">Botões de Retorno e Bottom Nav</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Botões de Retorno e Bottom Nav</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 4 – Controle do usuário: botão de retorno e navegação inferior.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1244,24 +1198,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Cards de ação seguem o mesmo layout (ícone + título + subtítulo + chevron) nas telas de professor, criando padrão escaneável.</span></div>
     </div>
 
-    <div class="screenshot-row triple">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🏷️</div>
-        <div class="screenshot-placeholder-label">Badges na Trilha</div>
-        <div class="screenshot-placeholder-sub">Inserir captura aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🏷️</div>
-        <div class="screenshot-placeholder-label">Badges no Quiz</div>
-        <div class="screenshot-placeholder-sub">Inserir captura aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🏷️</div>
-        <div class="screenshot-placeholder-label">Badges no Dashboard</div>
-        <div class="screenshot-placeholder-sub">Inserir captura aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Badges na Trilha · Badges no Quiz · Badges no Dashboard</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 5 – Consistência de componentes: o Badge em três contextos diferentes.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1297,19 +1240,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Separação clara entre modos aluno e professor desde o login previne acesso a funcionalidades inadequadas ao perfil.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🔒</div>
-        <div class="screenshot-placeholder-label">Nós Bloqueados na Trilha</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">⏳</div>
-        <div class="screenshot-placeholder-label">Estado de Carregamento da IA</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Nós Bloqueados na Trilha · Estado de Carregamento da IA</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 6 – Prevenção de erros: bloqueio de módulos e estado de loading.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1345,19 +1282,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Conquistas recentes exibidas na home mantêm o histórico de realizações acessível sem navegação adicional.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">👁️</div>
-        <div class="screenshot-placeholder-label">Contexto Visível no Quiz</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">👁️</div>
-        <div class="screenshot-placeholder-label">Progresso nas Subject Cards</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Contexto Visível no Quiz · Progresso nas Subject Cards</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 7 – Reconhecimento: contexto e progresso sempre visíveis.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1393,19 +1324,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Accordion no dashboard do professor expande detalhes por aluno apenas sob demanda, mantendo a lista compacta para uso eficiente.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">⚡</div>
-        <div class="screenshot-placeholder-label">Card de Atalho "Continuar"</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🤖</div>
-        <div class="screenshot-placeholder-label">Configuração Avançada da IA</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Card de Atalho "Continuar" · Configuração Avançada da IA</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 8 – Flexibilidade: atalho para alunos experientes e configuração granular da IA.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1441,19 +1366,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Elementos decorativos (círculos translúcidos no login) adicionam profundidade sem competir com o conteúdo funcional.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🎨</div>
-        <div class="screenshot-placeholder-label">Hierarquia Visual da Home</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">🎨</div>
-        <div class="screenshot-placeholder-label">Questão Isolada no Quiz</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Hierarquia Visual da Home · Questão Isolada no Quiz</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 9 – Minimalismo: hierarquia tipográfica e foco por questão.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1488,19 +1407,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Tela de resultado diferencia performance: 🏆 perfeito / 🎯 parcial / 📚 precisa melhorar — feedback gradual e construtivo.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">❌</div>
-        <div class="screenshot-placeholder-label">Feedback de Resposta Errada</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">✅</div>
-        <div class="screenshot-placeholder-label">Explicação Pedagógica</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Feedback de Resposta Errada · Explicação Pedagógica</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 10 – Recuperação de erros: feedback vermelho/verde e explicação contextual.</p>
   </div>
 
   <div class="heuristic-divider"><div class="heuristic-divider-line"></div><div class="heuristic-divider-dot"></div><div class="heuristic-divider-line"></div></div>
@@ -1535,19 +1448,13 @@
       <div class="evidence-item"><div class="evidence-dot"></div><span>Explicação pedagógica após cada questão do quiz não é apenas o gabarito — é conteúdo educativo que documenta o raciocínio correto.</span></div>
     </div>
 
-    <div class="screenshot-row">
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">💡</div>
-        <div class="screenshot-placeholder-label">Placeholder no Gerador de IA</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
-      </div>
-      <div class="screenshot-placeholder">
-        <div class="screenshot-placeholder-icon">💡</div>
-        <div class="screenshot-placeholder-label">Descrição de Disciplina</div>
-        <div class="screenshot-placeholder-sub">Inserir captura de tela aqui</div>
+    <div class="video-ref">
+      <span class="video-ref-icon">🎬</span>
+      <div>
+        <span class="video-ref-label">Telas mostradas no vídeo</span>
+        <span class="video-ref-screens">Placeholder no Gerador de IA · Descrição de Disciplina</span>
       </div>
     </div>
-    <p class="screenshot-caption">Figura 11 – Ajuda contextual: placeholder explicativo e descrição de disciplinas.</p>
   </div>
 
 </div><!-- /heuristicas -->
